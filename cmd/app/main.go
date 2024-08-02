@@ -1,9 +1,16 @@
 package main
 
-import "Search/internal/config"
+import (
+	"Search/internal/server"
+	"log"
 
-func main(){
-	cfg := config.LoadConfig()
+	"github.com/joho/godotenv"
+)
 
-	_ = cfg
+func main() {
+	if err := godotenv.Load(); err != nil {
+		log.Fatal("Failed reading env file")
+	}
+
+	server.Start()
 }
