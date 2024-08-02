@@ -8,10 +8,6 @@ import (
 	"github.com/labstack/echo"
 )
 
-type searchResult struct {
-	Title string `json:"title"`
-	URL   string `json:"url"`
-}
 
 func registerRoutes(e *echo.Echo) {
 	e.GET("/search", searchHandler)
